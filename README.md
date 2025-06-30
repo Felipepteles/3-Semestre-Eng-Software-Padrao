@@ -22,27 +22,27 @@ O padrão Singleton garante que uma classe tenha apenas uma instância e fornece
 
 - Pode introduzir estado global acoplado à aplicação.
 
-### Variações do Singleton
-# Singleton preguiçoso (lazy instantiation)
+# Variações do Singleton
+### Singleton preguiçoso (lazy instantiation)
 - A instância só é criada quando for usada pela primeira vez.
 - Menor uso de memória, porém pode ter problemas em ambiente concorrente.
 
-# Singleton ávido (eager instantiation)
+### Singleton ávido (eager instantiation)
 - A instância é criada logo na inicialização do programa.
 - Mais seguro, porém consome memória mesmo se não for usada.
 
-# Thread-safe Singleton
+### Thread-safe Singleton
 - Adiciona travas (locks) para garantir segurança em sistemas multi-thread.
 
-### Vantagens
-# Vantagem	              Descrição
+# Vantagens
+### Vantagem	              Descrição
 - Acesso global	          Permite acessar a instância de qualquer lugar.
 - Controle de instância	  Garante que só exista uma instância viva.
 - Economia de recursos	  Útil quando a criação de objetos é cara (Ex: conexão BD).
 - Fácil integração	      Pode ser integrado com outros padrões (ex: Singleton + Factory).
 
-### Desvantagens
-# Problema	              Explicação
+# Desvantagens
+### Problema	              Explicação
 - Atrapalha testes	      Pode criar dependência global e dificultar testes unitários.
 - Viola SRP	              Responsável por criar a instância e armazenar estado global.
 - Pode gerar concorrência	Em ambientes com múltiplas threads, pode criar múltiplas instâncias sem proteção.
@@ -60,7 +60,7 @@ O padrão Singleton garante que uma classe tenha apenas uma instância e fornece
 - Quando o código precisa ser altamente testável e desacoplado.
 - Quando você pode usar injeção de dependência no lugar.
 
-## Padrão Factory Method
+# Padrão Factory Method
 
 ### O que é?
 O Factory Method define uma interface para criar objetos, mas permite que subclasses decidam qual classe instanciar. Ele delega a responsabilidade da criação para subclasses, promovendo flexibilidade e reutilização de código.
@@ -81,19 +81,19 @@ O Factory Method define uma interface para criar objetos, mas permite que subcla
 
 - Pode ser excessivo para casos simples.
 
-### Variações do Factory Method
-# Factory Method Puro (Clássico – GoF)
+# Variações do Factory Method
+### Factory Method Puro (Clássico – GoF)
 - É o padrão original descrito no livro da Gang of Four, em que:
 - Existe uma superclasse (ou interface abstrata) com um método criarProduto(), que é sobrescrito pelas subclasses concretas.
 
-# Factory Method com Parâmetros
+### Factory Method com Parâmetros
 - Permite que o método de fábrica receba argumentos e, com base neles, decida qual objeto retornar.
 
-# Factory Method Estático
+### Factory Method Estático
 - O método criar() é estático (usado sem precisar instanciar a fábrica). Muito comum em linguagens como Java, C# e Python.
 
-### Vantagens
-# Vantagem	                  Explicação
+# Vantagens
+### Vantagem	                  Explicação
 - Desacoplamento	            O código cliente não precisa saber qual classe concreta está sendo instanciada, apenas usa a interface. Isso facilita a manutenção e a substituição de implementações.
 - Aberto para extensão	      É fácil adicionar novos produtos sem modificar o código existente (Princípio Aberto/Fechado - OCP). Basta criar uma nova subclasse que implemente o método fábrica.
 - Maior flexibilidade	        Permite que subclasses decidam qual objeto criar, tornando o sistema mais adaptável a mudanças e diferentes contextos.
@@ -101,8 +101,8 @@ O Factory Method define uma interface para criar objetos, mas permite que subcla
 - Organização do código	      Centraliza a lógica de criação de objetos, evitando duplicação de código de instanciamento.
 - Boa base para frameworks	  É amplamente utilizado em frameworks e bibliotecas que precisam criar objetos de forma genérica e reutilizável.
 
-### Desvantagens
-# Desvantagem	                                  Explicação
+# Desvantagens
+### Desvantagem	                                  Explicação
 - Mais classes e complexidade	                  Requer a criação de interfaces/abstrações e múltiplas subclasses, o que pode aumentar a complexidade e a quantidade de arquivos.
 - Pode ser desnecessário em casos simples	      Para projetos pequenos ou com poucos objetos, o uso do Factory Method pode ser um exagero.
 - Curva de aprendizado	                        Para iniciantes, pode ser confuso entender a separação entre fábrica, produto e cliente.
