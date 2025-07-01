@@ -1,5 +1,7 @@
 ## Padrão Singleton
 
+### https://youtu.be/X9WT1P-SWGs
+
 ### O que é?
 
 O padrão Singleton garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a essa instância.
